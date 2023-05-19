@@ -1,0 +1,66 @@
+
+<body>
+    <div class="wrapper">
+      <div class="info">
+
+        <table>
+            <tr>
+            <th>Email</th>
+            <td><%= user.email %></td>
+            </tr>
+            <tr>
+            <th>Role</th>
+            <td><%= user.role %></td>
+            </tr>
+            <tr>
+            <th>Graduation Year</th>
+            <td><%= user.graduationYear %></td>
+            </tr>
+            <tr>
+            <th>Major</th>
+            <td><%= user.major %></td>
+            </tr>
+            <tr>
+            <th>Job</th>
+            <td><%= user.job %></td>
+            </tr>
+            <tr>
+            <th>Company</th>
+            <td><%= user.company %></td>
+            </tr>
+            <tr>
+            <th>City</th>
+            <td><%= user.city %></td>
+            </tr>
+            <tr>
+            <th>State</th>
+            <td><%= user.state %></td>
+            </tr>
+            <tr>
+            <th>Country</th>
+            <td><%= user.country %></td>
+            </tr>
+            <tr>
+            <th>Zip Code</th>
+            <td><%= user.zipCode %></td>
+            </tr>
+            <tr>
+            <th>Bio</th>
+            <td><%= user.bio %></td>
+            </tr>
+            <tr>
+            <th>Interests</th>
+            <td><%= user.interests %></td>
+            </tr>
+        </table>
+      </div>
+      <div class="buttons">
+        <a class="button" href="/users/<%= user._id %>/edit">Edit User Details</a>
+        <a class="button" href="<%= `/users/${user._id}/delete?_method=DELETE` %>" onclick="return confirm('Are you sure you want to delete this user?')">Delete</a>
+        <!-- <a class="button" action="/users/<%= user._id %>" method="POST" onsubmit="return confirm('Are you sure you want to delete this record?')">
+          <input type="hidden" name="_method" value="DELETE" />
+          <button class="button" type="submit">Delete</button>
+        </a> -->
+      </div>
+    </div>
+  </body>

@@ -1,0 +1,72 @@
+<div class="data-form">
+  <br>
+  <p class="center-title">Create a New job</p>
+  <form action="/jobs/create" method="POST">
+    <div>
+      <label for="title">Title:</label>
+      <input type="text" name="title" id="title" required>
+    </div>
+    <div>
+      <label for="company">Company:</label>
+      <input type="text" name="company" id="company" required>
+    </div>
+    <div>
+      <label for="location">Location:</label>
+      <input type="text" name="location" id="location" required>
+    </div>
+    <div>
+      <label for="description">Description:</label>
+      <input type="text" name="description" id="description" rows="4" cols="50" required></input>
+    </div>
+    <div>
+      <label for="requirements">Requirements:</label>
+      <input type="text" name="requirements" id="requirements" rows="4" cols="50" required></input>
+    </div>
+    <div>
+      <label for="salary">Salary(per hour):</label>
+      <input type="number" name="salary" id="salary" required>
+    </div>
+    <div>
+      <label for="contactEmail">Contact Email:</label>
+      <input type="email" name="contactEmail" id="contactEmail" required>
+    </div>
+    <div>
+      <label for="contactPhone">Contact Phone:</label>
+      <input type="tel" name="contactPhone" id="contactPhone" pattern="[0-9]{10}" required>
+    </div>
+    <div>
+      <label for="deadlineDate">Deadline Date:</label>
+      <input type="date" name="deadlineDate" id="deadlineDate" required>
+    </div>
+    <div>
+      <label for="postDate">Post Date:</label>
+      <input type="date" name="postDate" id="psotDate" required>
+    </div>      
+    <div></div>
+    <button type="submit" class="btn btn-secondary">Submit</button>
+  </form>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

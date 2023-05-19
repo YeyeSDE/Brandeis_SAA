@@ -1,0 +1,31 @@
+<div class="main-content">
+     <p class="introduction"> Members of Brandeis SAA </p>
+    <article>
+        <table class="table">
+        <thead>
+            <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Zipcode</th>
+            <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% users.forEach(user => { %>
+              <tr>
+              <td><a href="<%= `/users/${user._id}`%>"><%= user.name %></a></td>
+              <td><%= user.email %></td>
+              <td><%= user.zipCode %></td>
+              <td>
+                  <a href="<%=`/users/${user._id}/edit`%>"> Edit </a>
+                  <a href="<%=`/users/${user._id}/delete?_method=DELETE`%>" onclick="return confirm('Do you want to delete?')">Delete</a>
+              </td>
+              </tr>
+            <% }); %>
+        </tbody>
+        </table>
+    </article> 
+</div>
+
+
+

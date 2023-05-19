@@ -1,0 +1,57 @@
+<body>
+  <div class="wrapper">
+    <div class="info">
+      <h1 class="center-title"><%= job.title %> at <%= job.company %></h1>
+      <table>
+        <tr>
+          <th>Title</th>
+          <td><%= job.title %></td>
+        </tr>
+        <tr>
+          <th>Company</th>
+          <td><%= job.company %></td>
+        </tr>
+        <tr>
+          <th>Location</th>
+          <td><%= job.location %></td>
+        </tr>
+        <tr>
+          <th>Description</th>
+          <td><%= job.description %></td>
+        </tr>
+        <tr>
+          <th>Requirements</th>
+          <td><%= job.requirements %></td>
+        </tr>
+        <tr>
+          <th>Salary</th>
+          <td>hourly $<%= job.salary %></td>
+        </tr>
+        <tr>
+          <th>Contact Email</th>
+          <td><%= job.contactEmail %></td>
+        </tr>
+        <tr>
+          <th>Contact Phone</th>
+          <td><%= job.contactPhone %></td>
+        </tr>
+        <tr>
+          <th>Post Date</th>
+          <td><%= job.postDate.toDateString() %></td>
+        </tr>
+        <tr>
+          <th>Deadline Date</th>
+          <td><%= job.deadlineDate.toDateString() %></td>
+        </tr>
+      </table>
+    </div>
+    <div></div>
+    <div class="buttons">
+      <a class="button-1" href="/jobs">View all jobs</a>
+      <a class="button-1" href="<%=`/jobs/${job._id}/edit`%>">Edit Job Details</a>
+      <a class="button-1" href="<%= `/jobs/${job._id}/delete?_method=DELETE` %>" onclick="return confirm('Confirm to delete')">Delete</a>
+    </div>
+  </div>
+</body>
+
+

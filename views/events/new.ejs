@@ -1,0 +1,58 @@
+<div class="data-form">
+    <br>
+    <p class="center-title">New Event</p>
+    <form method="POST" action="/events/create">
+      <div>
+        <label for="title">Title:</label>
+        <input type="text" name="title" id="title" required>
+      </div>
+      <div>
+        <label for="description">Description:</label>
+        <input type="text" name="description" id="description" rows="4" cols="50" required></input>
+      </div>
+      <div>
+        <label for="location">Location:</label>
+        <input type="text" name="location" id="location" required>
+      </div>
+
+      <div>
+        <label for="registrationLink">Registration Link:</label>
+        <input type="text" name="registrationLink" id="registrationLink">
+      </div>
+      <div>
+        <label for="startDate">Start Date:</label>
+        <input type="date" name="startDate" id="startDate" required>
+      </div>
+      <div>
+        <label for="endDate">End Date:</label>
+        <input type="date" name="endDate" id="endDate" required>
+      </div>
+
+
+      <div>
+        <label for="organizer">Organizer:</label>
+        <select name="organizer" id="organizer" required>
+          <% users.forEach(function(user) { %>
+            <option value="<%= user._id %>"><%= user.name %></option>
+          <% }); %>
+        </select>
+      </div>
+      <div>
+        <label for="isOnline">Is Online:</label>
+        <select name="isOnline" id="isOnline" required>
+          <option value="true">Yes</option>
+          <option value="false">No</option>
+        </select>
+      </div>
+
+      <div>
+        <label for="attendees">Attendees:</label>
+        <select name="attendees" id="attendees" multiple>
+          <% users.forEach(function(user) { %>
+            <option value="<%= user._id %>"><%= user.name %></option>
+          <% }); %>
+        </select>
+      </div>
+      <button type="submit" class="button-1">Submit</button>
+    </form>
+</div>

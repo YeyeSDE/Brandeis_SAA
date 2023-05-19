@@ -1,0 +1,53 @@
+
+<div class="main-content">
+    <article>
+        <p class="title">Events</p>
+        <p class="introduction"> Join the events exclusively for our alumni and student community!</p>
+        <p class="content">You'll have the opportunity to connect with fellow alumni and expand your professional network. You'll also have the chance to participate in career development workshops, hear from guest speakers, and attend social gatherings.</p>
+        <a href="events/new" class="main-button">Register for an Event!</a>
+    </article>
+      <body>
+        <div class="buttons">
+          <p class="sub-title">Your Registered Events</p>
+          <% events.forEach(event => { %>
+            <p><%= event.title %></p>
+            <a class="attend-button" data-event-id="<%= event.id %>"><u>Attend</u></a>
+            <a class="button-1" href="/events/<%= event._id %>">View</a>
+          <% }); %>
+        </div>
+      </body>
+</div>
+
+<script>
+  window.addEventListener("load", (event) => {
+    const allAttendButtons = document.querySelectorAll('.attend-button');
+
+    allAttendButtons.forEach(button => {
+      button.addEventListener('click', async () => {
+        const eventId = button.getAttribute("data-event-id");
+        const username = prompt('Please enter your user name:');
+        
+        if (!username) {
+          alert('No username, cancelling.');
+          return;
+        }
+
+        const response = await fetch(`/events/${eventId}/attend`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({ username: username })
+        })
+
+        if (response.ok) {
+          alert('Joined the event!');
+          location.reload();
+        } else if (response.status === 404) {
+          alert('Account does not exist, please create one!');
+          location.href = '/users/new';
+        }
+      });
+    });
+  });
+</script>

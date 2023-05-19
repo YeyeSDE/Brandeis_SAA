@@ -1,0 +1,55 @@
+<body>
+    <div class="wrapper">
+      <div class="info">
+        <h1 class="center-title"><%= event.title %> at <%= event.location %></h1>
+        <table>
+          <tr>
+            <th>Title</th>
+            <td><%= event.title %></td>
+          </tr>
+          <tr>
+            <th>Description</th>
+            <td><%= event.description %></td>
+          </tr>
+          <tr>
+            <th>Location</th>
+            <td><%= event.location %></td>
+          </tr>
+          <tr>
+            <th>Registration Link</th>
+            <td><a href="<%= event.registrationLink %>"><%= event.registrationLink %></a></td>
+          </tr>
+          <tr>
+            <th>Start Date</th>
+            <td><%= event.startDate.toDateString() %></td>
+          </tr>
+          <tr>
+            <th>End Date</th>
+            <td><%= event.endDate.toDateString() %></td>
+          </tr>
+          <tr>
+            <th>Organizer</th>
+            <td><%= event.organizer ? event.organizer.name : 'No organizer' %></td>
+          </tr>
+          <tr>
+            <th>Is Online</th>
+            <td><%= event.isOnline ? 'Yes' : 'No' %></td>
+          </tr>
+          <tr>
+            <th>Attendees</th>
+            <td>
+              <% event.attendees.forEach(function(attendee, index) { %>
+                <%= attendee.name %><%= index !== event.attendees.length - 1 ? ',' : '' %>
+              <% }); %>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div></div>
+      <div class="buttons">
+        <a class="button-1" href="/events">View all events</a>
+        <a class="button-1" href="<%=`/events/${event._id}/edit`%>">Edit Event Details</a>
+        <a class="button-1" href="<%= `/events/${event._id}/delete?_method=DELETE` %>" onclick="return confirm('Confirm to delete.')">Delete</a>
+      </div>
+    </div>
+  </body>

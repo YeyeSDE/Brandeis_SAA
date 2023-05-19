@@ -1,0 +1,24 @@
+<head>
+    <link  href="style.css" type="text/css">
+</head>
+<% if (currentUser) { %>
+    <div class="chat">
+    <h1>Chat</h1>
+    <form id="chatForm">
+
+    <div class="chat-form">
+        <input id="chat-input" type="text" />
+        <input id="chat-user-name" type="hidden" value="<%= currentUser.name %>" />
+        <input id="chat-user-id" type="hidden" value="<%= currentUser._id %>" />
+        <input type="submit" class="chat-form-button " value="Send" />
+    </div>
+    
+    </form>
+    <div id="chat"></div>
+    <script type="text/javascript" src="/js/jquery.min.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script type="text/javascript" src="/js/chatApp.js"></script>
+<% } else { %>
+    <h1 class="chatPrompt">Please log in first to access the chat feature</h1>
+<% } %>
+</div>

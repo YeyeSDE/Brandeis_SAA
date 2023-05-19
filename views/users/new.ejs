@@ -1,0 +1,66 @@
+<div class="data-form">
+  <br>
+  <p class="center-title">Create a new user</p>
+  <form action="/users/create" method="POST">
+    <div>
+      <label for="name">Name:<br></label>
+      <input type="text" name="name" id="name" required>
+    </div>
+    <div>
+      <label for="email">Email:<br></label>
+      <input type="email" name="email" id="email" required>
+    </div>
+    <div>
+      <label for="password">Password:<br></label>
+      <input type="password" name="password" id="password" required>
+    </div>
+    <div>
+      <label for="role">Role:<br></label>
+      <select name="role" id="role">
+        <option value="student" selected>Student</option>
+        <option value="alumni">Alumni</option>
+      </select>
+    </div>
+    <div>
+      <label for="graduationYear">Graduation Year:<br></label>
+      <input type="number" name="graduationYear" id="graduationYear" required>
+    </div>
+    <div>
+      <label for="major">Major:<br></label>
+      <input type="text" name="major" id="major" required>
+    </div>
+    <div>
+      <label for="job">Job:<br></label>
+      <input type="text" name="job" id="job">
+    </div>
+    <div>
+      <label for="company">Company:<br></label>
+      <input type="text" name="company" id="company">
+    </div>
+    <div>
+      <label for="city">City:<br></label>
+      <input type="text" name="city" id="city">
+    </div>
+    <div>
+      <label for="state">State:<br></label>
+      <input type="text" name="state" id="state">
+    </div>
+    <div>
+      <label for="country">Country:<br></label>
+      <input type="text" name="country" id="country">
+    </div>
+    <div>
+      <label for="zipCode">Zip Code:<br></label>
+      <input type="number" name="zipCode" id="zipCode" min="10000" max="99999" required>
+    </div>
+    <div>
+      <label for="bio">Bio:<br></label>
+      <input type='text' name="bio" id="bio" rows="4" cols="50"></input>
+    </div>
+    <div>
+      <label for="interests">Interests:<br></label>
+      <input type="text" name="interests" id="interests">
+    </div>      
+    <button type="submit">Submit</button>
+  </form>
+</div>
